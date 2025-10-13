@@ -1,6 +1,116 @@
-#tagline {
+  p {
+    color: navy;
+}
+
+h1, h2{
+    color: white;
+    background-color: #0000ff;
+}
+ul {
+	list-style-type:none;
+}
+
+a {
+	font-weight: bold;
+}
+
+a:link, a:visited {
+   color: navy;
+   text-decoration:none;
+}
+
+a:hover {
+   text-decoration:underline;
+   color: white;
+   background-color: navy;
+}
+
+a:active {
+   color: orange;
+   background-color: navy;
+}
+
+ #tagline {
+    background: #bed8f3;
     font-style: italic;
     font-family: Georgia, Times, serif;
+    border-top: 3px solid #7da5d8;
+    border-bottom: 3px solid #7da5d8;
+    padding-top: .2em;
+    padding-bottom: .2em;
+    padding-left: .8em;
+    margin: 0;
   }
 
-  
+.fun {
+  color: #339999;
+  font-family: Georgia, Times, serif;
+  letter-spacing: 0.05em;
+}
+ul a {
+	font-weight: bold;
+}
+
+ul a:link, ul a:visited {
+   color: navy;
+   text-decoration:none;
+}
+
+ul a:hover {
+   text-decoration:underline;
+   color: white;
+   background-color: navy;
+}
+
+ul a:active {
+   color: orange;
+   background-color: navy;
+}
+p a:link, a:visited {
+   color: blue;
+}
+
+p a:hover {
+   text-decoration:none;
+}
+body, html {
+  margin:0;
+  padding:0;
+  width:100%;
+  height:100%;
+} 
+
+body {
+  font-family: Verdana, Helvetica, Arial, sans-serif;
+  background-color: #e2edff;
+  line-height: 125%;
+}
+header {
+  margin:0;
+  padding:0 !important;
+  background-color:navy;
+}
+
+h1 {
+  font-size: x-large;
+  color: white;
+  padding-top: 2em;
+  padding-bottom: .2em;
+  padding-left: .4em;
+  margin: 0;
+}
+
+h2 {
+  padding-top:.5em;
+  color: navy;
+  font-size: 130%;
+  font-weight: normal;
+}
+
+h1, h2, h3 {
+  font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
+}
+#container {
+    width: 80%;
+    margin: 0 auto;
+}

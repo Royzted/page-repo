@@ -1,0 +1,38 @@
+body {
+    background-color: #ffffe0;
+    color: teal;
+    font-family: Book Antiqua, serif;
+}
+
+h1 {
+    color: navy;
+}
+
+h2 {
+    color: navy;
+}
+
+hr {
+    border-width: 0px;
+    color: navy;
+    background-color: navy;
+    height: 6px;
+}
+
+a {
+    font-style: bold;
+}
+a:link {
+    color: #0000CD;
+}
+a:visited {
+    color: black;
+}
+a:hover {
+    text-decoration: none;
+}
+a:active {
+    font-family: aqua, sans-serif;
+    background-color: navy;
+
+}
