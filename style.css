@@ -1,0 +1,38 @@
+/* Общие стили */
+body {
+    margin: 0;
+    font-family: 'Aeogo', sans-serif;
+    background-color: #ffffff;
+    background-color: #000000;
+}
+
+@font-face {
+    font-family: 'SF Pro';
+    src: url('fonts/SF-Pro.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'SF Pro Bold';
+    src: url('fonts/SF-Pro-Bold.ttf') format('truetype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'SF Pro Expanded';
+    src: url('fonts/SF-Pro-ExpandedThin.ttf') format('truetype');
+    font-weight: 100; /* Thin */
+}
+
+@font-face {
+    font-family: 'BD Plakatt';
+    src: url('fonts/bdplakatt.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Aeogo';
+    src: url('fonts/AeogoPxltdNext-5y27B.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Helvetica';
+    src: url('fonts/Helvetica Ultra Compressed.otf') format('opentype');
+}

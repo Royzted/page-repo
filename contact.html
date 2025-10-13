@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/png" sizes="32x32" href="images/demon3.png">
+    <title>CONTACT</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script> <!-- Link to external JS file -->
+	<style>
+	.Sf-bold {
+    font-family: 'SF Pro Bold';
+    font-size: 44px;
+    font-weight: normal;
+    color: #ddd;
+	line-height: 40px;
+}
+.Sf {
+    font-family: 'SF Pro';
+    font-size: 54px;
+    font-weight: normal;
+    color: #ddd;
+	line-height: 40px;
+}
+
+.Sf-light {
+    font-family: 'SF Pro Expanded';
+    font-size: 48px;
+    font-weight: normal;
+    color: #ddd;
+	line-height: 50px;
+}
+		.euro {
+			font-family: 'eurostile';
+			font-size: 48px;
+    font-weight: normal;
+    color: #ffffff;
+	line-height: 50px;
+		}
+	
+		  .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+			border: 1px solid #ffffff;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+            text-align: center;
+			position: absolute;
+			top:5%;
+			left: 25%;
+        }
+		.contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding: 20px;
+        }
+       
+        .contact-form input,
+        .contact-form textarea {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+       
+        .contact-form textarea {
+            height: 150px;
+            resize: none;
+        }
+       
+        .contact-form button {
+            padding: 10px;
+            background-color: darkgray;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+       
+        .contact-form button:hover {
+            background-color: gray;
+        }
+		.rectangle-back{
+			position: absolute;
+            width: 15%;
+			top: 0px;
+            height: 150px; /* Adjust height as needed */
+            background-color: #000000;
+            
+          
+		}
+		.button1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+		
+
+.button1:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+	</style>
+	
+</head>
+
+
+	
+<body>		
+    <div class="rectangle-back">
+	<a href="index.html" class="button1"></a>
+    <p class="euro" style = "color: #ffffff; font-size: 300%;">&nbsp;HOME</p>
+    </div>
+    <div class="container">
+        <h1 class="euro" style="font-size:48px; ">CONTACT ME</h1>
+        <p class="Sf" style="font-size:30px; color: #ffffff; "> Sup, I'm Kiril<br>If you have any questions or feedback<br> feel free to send me an email using that from down below:</p>
+       
+        <form action="https://formspree.io/f/xblgjnrl" method="POST" class="contact-form">
+            <input class="euro" style="color: black;" type="text" name="name" placeholder="NAME" required>
+            <input class="euro" style="color: black;" type="email" name="email" placeholder="EMAIL" required>
+            <textarea class="euro" style="color: black;" name="message" placeholder="Your Message" required></textarea>
+            <button class="euro" type="submit">Send Message</button>
+        </form>
+	</div>
+</body>
+</html>
