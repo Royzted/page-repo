@@ -1,9 +1,7 @@
-/* Общие стили */
-body {
-    margin: 0;
-    font-family: 'Aeogo', sans-serif;
-    background-color: #ffffff;
-    background-color: #000000;
+body
+{
+background-color: #000000;
+font-family: "Aeogo";
 }
 
 @font-face {
@@ -35,4 +33,308 @@ body {
 @font-face {
     font-family: 'Helvetica';
     src: url('fonts/Helvetica Ultra Compressed.otf') format('opentype');
+}
+
+.Sf-bold {
+    font-family: 'SF Pro Bold';
+    font-size: 150%;
+    font-weight: normal;
+    color: #ddd;
+	line-height: 40px;
+}
+.Sf {
+    font-family: 'SF Pro';
+    font-size: 54px;
+    font-weight: normal;
+    color: #ddd;
+	line-height: 40px;
+}
+
+.Sf-light {
+    font-family: 'SF Pro Expanded';
+    font-size: 48px;
+    font-weight: normal;
+    color: #ddd;
+	line-height: 50px;
+}
+.euro {
+			font-family: 'eurostile';
+			font-size: 48px;
+    font-weight: normal;
+    color: #ffffff;
+	line-height: 50px;
+		}
+		.Geek {
+    font-family: 'RoadGeek';
+    font-size: 28px;
+    text-transform: normal;
+    letter-spacing: 2px;
+    margin-bottom: 0px;
+	color: white;
+	pointer-events: auto;
+    display: inline-block;
+    line-height: 1;
+    
+}
+		.neu {
+    font-family: 'Neuzeit-bold';
+    font-size: 48px;
+    font-weight: normal;
+    color: #000000;
+	line-height: 50px;
+	pointer-events: auto;
+    display: inline-block;
+    line-height: 1;
+}	
+		.Deansgt {
+	position: absolute;
+    font-family: 'Deansgate';
+    font-size: 50px;
+    font-weight: normal;
+    color: #ddd;
+    pointer-events: auto;
+    display: inline-block;
+    line-height: 1;
+}	
+
+@keyframes slowRainbow {
+    0% { color: red; }
+    16% { color: orange; }
+    32% { color: yellow; }
+    48% { color: green; }
+    64% { color: blue; }
+    80% { color: indigo; }
+    100% { color: red; }
+}
+@scope (.bubble-link) {
+  a {
+    transition: color 0.5s ease;
+    text-decoration: none;
+    color: #ffffff;
+    cursor: pointer;
+  }
+
+
+a:hover {
+    animation: slowRainbow 3s linear infinite;
+}
+}
+@scope (.labs) {
+a:hover {
+    animation: slowRainbow 3s linear infinite;
+}
+  a {
+    transition: color 0.5s ease;
+    text-decoration: none;
+    color: #ffffff;
+    cursor: pointer;
+  }
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;  
+  align-items: center;    
+  padding: 16px 16px;                
+  gap: 12px;
+  
+}
+
+.site-title {
+  position: absolute;
+  left: 50%;
+  top:2%;
+  transform: translateX(-50%);
+  margin: 0;
+  font-size: clamp(18px, 2.5vw, 28px);
+  text-align: center;
+  font-family: "SF Pro Bold";
+  color: white;
+}
+
+.button {
+  display: inline-flex;          
+  align-items: center;
+  justify-content: center;
+
+ 
+  background-color: transparent;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+
+  
+  padding: clamp(8px, 1.2vw, 14px) clamp(12px, 2vw, 24px); 
+  font-family: 'SF Pro Expanded', system-ui, sans-serif;
+  font-size: clamp(22px, 3vw, 36px); 
+
+  transition: background-color 180ms ease, transform 80ms ease, border-color 180ms ease;
+  cursor: pointer;
+
+  
+  white-space: normal;
+  word-break: break-word; 
+  max-width: 90vw;              
+  box-sizing: border-box;
+  transition: color 0.4s ease, color 0.4s ease;
+}
+
+
+.button:hover {
+  color: rgba(255, 255, 255, 0.5);
+  
+}
+
+
+.button:active {
+  transform: translateY(1px) scale(0.995);
+}
+
+
+.weeks-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between; 
+  align-items: flex-start;
+  padding: 20px;
+  
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+
+.week {
+  flex: 1 1 160px;    
+  min-width: 140px;   
+  max-width: 18%;     
+  background: transparent;
+  color: #ffffff;
+  font-family: 'SF Pro Expanded', system-ui, sans-serif;
+}
+
+.week summary {
+  list-style: none;
+  cursor: pointer;
+  font-size: clamp(16px, 2.2vw, 22px);
+  padding: 8px 10px;
+  margin: 0;
+  user-select: none;
+  border-radius: 4px;
+  transition: background-color 0.18s ease, color 0.18s ease;
+}
+
+.week summary:hover {
+  background: rgba(255,255,255,0.04);
+  color: rgba(255,255,255,0.95);
+}
+
+
+.labs {
+  margin: 6px 0 0 0;
+  padding: 6px 12px;
+  display: none; 
+  list-style: none;
+}
+
+.week[open] .labs {
+  display: block;
+}
+
+.labs li {
+  margin: 6px 0;
+  font-size: clamp(14px, 2vw, 18px);
+}
+.labs a {
+  color: #ffffff;
+  
+}
+
+.labs a:hover {
+  color: rgba(255,255,255,0.8);
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .week { flex: 1 1 45%; max-width: 48%; }
+}
+
+@media (max-width: 520px) {
+  .weeks-container { gap: 12px; padding: 12px; }
+  .week { flex: 1 1 100%; max-width: 100%; }
+  .week summary { text-align: left; }
+}
+
+
+   @media (max-width: 600px) {
+  .top-bar {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+  }
+
+  .site-title {
+    position: static;
+    transform: none;
+    margin-top: 8px;
+    text-align: center;
+    font-family: "SF Pro Bold";
+    color: white;
+  }
+  .left-section {
+    align-items: center;
+    justify-content: bottom;
+  }
+
+  .button {
+    font-size: 18px;
+  }
+  .footer {
+    justify-content: center;  
+    align-items: center;
+    height: auto;
+    padding: 30px 0;
+    text-align: center;
+}
+   }
+.footer {
+  display: flex;
+  justify-content: flex-start; 
+  align-items: flex-end;       
+  height: 15vh;                
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.bubble-link {
+  font-family: 'eurostile';
+  color: #ffffff;
+  text-decoration: none;
+  font-size: clamp(16px, 2.5vw, 24px);
+}
+footer.footer .bubble-link {
+  display: inline-block;
+  padding: 6px 10px;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: 'eurostile', system-ui, sans-serif;
+  font-size: clamp(16px, 2.5vw, 24px);
+  transition: color 0.25s ease, background-color 0.25s ease;
+  cursor: pointer;
+  z-index: 10; 
+}
+
+
+footer.footer .bubble-link:hover,
+footer.footer .bubble-link:focus {
+  color: rgba(255,255,255,0.5);
+ 
+  outline: none;
+}
+
+
+footer.footer .bubble-link:active {
+  transform: translateY(1px);
 }
