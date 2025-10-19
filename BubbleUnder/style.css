@@ -2,7 +2,7 @@
     color: navy;
 }
 
-h1, h2{
+h1{
     color: white;
     background-color: #0000ff;
 }
@@ -47,25 +47,26 @@ a:active {
   font-family: Georgia, Times, serif;
   letter-spacing: 0.05em;
 }
-ul a {
-	font-weight: bold;
+nav ul {
+	list-style-type:none;
+  padding: 0;
 }
 
-ul a:link, ul a:visited {
-   color: navy;
-   text-decoration:none;
+nav ul li  {
+  padding: 10px 20px;
 }
 
-ul a:hover {
-   text-decoration:underline;
-   color: white;
-   background-color: navy;
-}
+nav ul li a:link, nav ul li a:visited {
+  background-color: dodgerblue;
+  color: white;
+  text-decoration: none;
+  }
+  
+nav ul li a:hover, nav ul li a:active {
+    background-color: lightskyblue;
+ }
 
-ul a:active {
-   color: orange;
-   background-color: navy;
-}
+
 p a:link, a:visited {
    color: blue;
 }
@@ -114,3 +115,21 @@ h1, h2, h3 {
     width: 80%;
     margin: 0 auto;
 }
+img.feature {
+  float:right;
+  margin-left: 1%;
+}
+#content {
+	display: flex;
+}
+
+nav {
+  background-color: dodgerblue;
+  flex: 1;
+}
+
+main {
+  flex:5;
+  padding-left:1em;
+}
+
