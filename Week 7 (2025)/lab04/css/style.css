@@ -1,0 +1,19 @@
+figcaption
+{
+    font-family: Verdana;
+    font-weight: bold;
+    color: white;
+}
+
+span 
+{
+    font-size: 80%;
+    font-style: italic;
+    color: lightgrey;
+}
+figure
+{
+    background-color: navy;
+    width: 600px;
+    padding: 20px;
+}

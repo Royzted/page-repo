@@ -1,0 +1,40 @@
+table{
+	width: 60%;
+	margin: 5% auto;
+	border-collapse: collapse;
+}
+table, th, td {
+	border-right:solid #336633 1px;
+	border-left:solid #336633 1px;
+	padding: 0.4em;
+}
+thead 
+{
+	background-color: #339933;
+	color: white;
+}
+td
+{
+	text-align: center;
+	
+}
+td:nth-of-type(3)
+{
+	font-style: italic;
+}
+tbody tr:nth-of-type(even)
+{
+	background-color: #88ee88;
+}
+tbody tr:nth-of-type(odd)
+{
+	background-color: #99ff99;
+}
+tbody tr:hover
+{
+	background-color: #336633;
+}
+th:nth-of-type(1)
+{
+	text-align: left;
+}
