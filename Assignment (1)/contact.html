@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/png" sizes="32x32" href="img/iAmInsane.png">
+    <title>[EN] CONTACT PAGE</title>
+    <link rel="stylesheet" href="style_main.css">
+	<style>
+	.Sf-bold {
+    font-family: 'SF Pro Bold';
+    font-size: 44px;
+    font-weight: normal;
+    color: #ddd;
+	line-height: 40px;
+}
+.Sf {
+    font-family: 'SF Pro';
+    font-size: 54px;
+    font-weight: normal;
+    color: #ddd;
+	line-height: 40px;
+}
+
+.Sf-light {
+    font-family: 'SF Pro Expanded';
+    font-size: 48px;
+    font-weight: normal;
+    color: #ddd;
+	line-height: 50px;
+}
+		.euro {
+			font-family: 'eurostile';
+			font-size: 48px;
+    font-weight: normal;
+    color: #ffffff;
+	line-height: 50px;
+		}
+	
+		  
+:root{
+  --bg-border: rgba(255,255,255,0.12);
+  --bg-shadow: rgba(255,255,255,0.06);
+  --accent: #ffffff;
+  --muted: rgba(255,255,255,0.7);
+  --input-bg: rgba(255,255,255,0.03);
+  --focus: rgba(255,255,255,0.12);
+}
+
+
+.container {
+  max-width: 960px;
+  margin: 24px auto;
+  padding: 18px;
+  border: 1px solid var(--bg-border);
+  border-radius: 8px;
+  box-shadow: 0 4px 18px var(--bg-shadow);
+  text-align: left;
+  box-sizing: border-box;
+  background: transparent; 
+}
+
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 6px;
+}
+
+
+.form-title {
+  margin: 0 0 6px 0;
+  color: var(--accent);
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+
+.row {
+  display: flex;
+  flex-direction: column; 
+  gap: 12px;
+}
+
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+
+.label-text {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px 14px;
+  border: 1px solid transparent;
+  background: var(--input-bg);
+  color: var(--accent);
+  font-size: 1rem;
+  border-radius: 6px;
+  outline: none;
+  transition: box-shadow 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+  box-sizing: border-box;
+}
+
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--focus);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+
+.contact-form textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+
+.actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+.btn-submit {
+  padding: 12px 20px;
+  background: #666;             
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.08s ease;
+}
+
+
+.btn-submit:hover { background: #555; transform: translateY(-1px); }
+.btn-submit:active { transform: translateY(0); }
+
+
+@media (max-width: 640px) {
+  .actions { justify-content: stretch; }
+  .btn-submit { width: 100%; display: inline-block; }
+}
+
+
+@media (min-width: 780px) {
+  .row {
+    flex-direction: row;
+  }
+  .row .field {
+    flex: 1 1 0;
+  }
+  .row .field:first-child { margin-right: 12px; }
+  .contact-form {
+    gap: 16px;
+  }
+}
+
+
+.contact-form input,
+.contact-form textarea,
+.btn-submit { min-height: 44px; }
+	</style>
+	
+</head>
+
+
+	
+<body>		
+  
+    <header class="top-bar" >
+    <a href="index.html"     class="button" style="font-family: SF Pro Expanded;">HOME</a>
+    <a href="about.html"     class="button" style="font-family: SF Pro Expanded;">ABOUT</a>
+    <a href="projects.html"     class="button" style="font-family: SF Pro Expanded;">PROJECTS</a>
+  </header>
+
+  <main>
+   <hr>
+<div class="container">
+  <form class="contact-form" action="https://formspree.io/f/xblgjnrl" method="post" aria-labelledby="contactTitle">
+    <h2 id="contactTitle" class="form-title">CONTACT ME</h2>
+
+    <div class="row">
+      <label class="field">
+        <span class="label-text">YOUR NAME</span>
+        <input type="text" name="name" placeholder="Name" required />
+      </label>
+
+      <label class="field">
+        <span class="label-text">EMAIL</span>
+        <input type="email" name="email" placeholder="email@example.com" required />
+      </label>
+    </div>
+
+    <label class="field">
+      <span class="label-text">SUBJECT</span>
+      <input type="text" name="subject" placeholder="Subject" />
+    </label>
+
+    <label class="field">
+      <span class="label-text">MESSAGE</span>
+      <textarea name="message" placeholder="Your Message..." rows="6" required></textarea>
+    </label>
+
+    <div class="actions">
+      <button type="submit" class="btn-submit" style="font-family: eurostile;">SEND MESSAGE</button>
+    </div>
+  </form>
+</div>
+</main>
+
+<footer>
+  <p style="font-size: 18px; font-family: SF Pro Expanded;">All rights reserved. Kiril Kononenko&copy;</p>
+</footer>
+</body>
+</html>

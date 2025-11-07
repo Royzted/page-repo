@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">    
+<head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/png" sizes="32x32" href="img/eh.png">
+    <title>[EN] HOME PAGE - KIRIL KONONENKO</title>
+    <link rel="stylesheet" href="style_main.css">
+
+    <style>
+        .container {
+   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+/*------------------ chatgptied ------------------*/
+.photo-row {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  gap: 20px; 
+}
+main{
+  background: linear-gradient(90deg, #0a0a0a, #0F0F0F, #0a0a0a, #0F0F0F);
+  background-size: 400% 400%;
+  animation: subtleGradient 20s ease-in-out infinite;
+  color: white;
+}
+@keyframes subtleGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+    </style>
+</head>
+<body>
+   
+    <header class="top-bar" >
+    <a href="about.html"     class="button" style="font-family: SF Pro Expanded;">ABOUT</a>
+    <a href="projects.html"     class="button" style="font-family: SF Pro Expanded;">PROJECTS</a>
+    <a href="contact.html"     class="button" style="font-family: SF Pro Expanded;">CONTACT</a>
+</header>
+<hr>
+
+<main>
+    <div class="container">
+        <p>Hi, I’m Kiril. I create, code, and dream.</p>
+         <div class="photo-row">
+            <img src="img/cat1.jpg" alt="cat1" class="mainPhoto">  
+            <img src="img/cat2.jpg" alt="cat2" class="mainPhoto"> 
+            </div> 
+    </div>
+<br><br>
+<p style="text-align: center; font-family: Sf Pro Expanded;">In this page you'll learn about:</p>
+<br><br>
+<table style="margin: 0 auto; font-family: 'SF Pro Expanded'; color: white; border-collapse: collapse;">
+  <tr>
+    <th style="padding: 10px 20px; border-bottom: 1px solid #444;">About Me</th>
+    <th style="padding: 10px 20px; border-bottom: 1px solid #444;">Skills</th>
+    <th style="padding: 10px 20px; border-bottom: 1px solid #444;">Projects</th>
+  </tr>
+  <tr>
+    <td style="padding: 10px 20px;">Who I am</td>
+    <td style="padding: 10px 20px;">Coding, Design</td>
+    <td style="padding: 10px 20px;">Portfolio, Games</td>
+  </tr>
+</table>
+<br><br>
+</main>
+
+<footer>
+  <p style="font-size: 18px; font-family: SF Pro Expanded;">All rights reserved. Kiril Kononenko&copy;</p>
+</footer>
+</body>
+</html>

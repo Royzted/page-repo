@@ -34,6 +34,10 @@ font-family: "Aeogo";
     font-family: 'Helvetica';
     src: url('fonts/Helvetica Ultra Compressed.otf') format('opentype');
 }
+@font-face {
+  font-family: 'eurostile';
+  src: url('fonts/Eurostile.ttf') format('truetype');
+}
 
 .Sf-bold {
     font-family: 'SF Pro Bold';
