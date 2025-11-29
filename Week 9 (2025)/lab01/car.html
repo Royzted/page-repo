@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Car Booking</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+
+  <body>
+    <div id="container">
+      <header>
+        <h1>Book a Car</h1>
+      </header>
+      <main>
+        <section id="form">
+          <h2>Contact Us</h2>
+
+          <form action="process.html" method="post" id="booking">
+            <div class="form-row">
+              <label for="contactname">Name</label>
+              <input
+                type="text"
+                name="contactname"
+                id="contactname"
+                required
+                autofocus
+                pattern = "[A-Z][a-z]+( [A-Z][a-z]+)?"
+                title="Name must start with a capital letter">
+                
+
+            </div>
+          
+        <div class="form-row">
+          <label for="email">Email</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                required
+                pattern = "[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
+                title="Please enter the valid Email(name@gmail.com)">
+        </div>
+
+       
+
+        <fieldset class = "check">
+            <legend>Do you have a Driver's License </legend>
+            <label> <input type="radio" id="yes" name = "license" value="yes"> Yes </label>
+            <label> <input type="radio" id="no" name = "license" value="no"> No </label>
+        </fieldset>
+<div class="form-row">
+<label for="age">Age</label>
+<input type="number" 
+id="age" 
+min="17"
+ max="80"
+ required
+  title="Please enter your age(17-80)">
+</div>
+<div class="form-row">
+  <label for="date">Date</label>
+  <input type="date" id="date" required>
+  <title>Please enter correct date</title>
+</div>
+<div class="form-row">
+  <label for="car">Car</label>
+  <select id="car">
+    <option>Ford Focus</option>
+    <option>Hyundai Tuscon</option>
+    <option>Toyota Rav4</option>
+    <option>Renault Kadjar</option>
+    <option>Nissan Qashqai</option>
+    </select>
+</div>
+
+<p>Please provide any other details you think will be useful to us in the text area below (it may save us calling or emailing you,and help avoid delays).</p>
+<div class="form-row">
+  <label for="details">More Details(as much as you think we'll need!)</label>
+<textarea></textarea>
+</div>
+<input style="clear:left" type="submit" value="Send us the Info">
+<input type="reset" value = "Clear the Info">
+</form>
+</section> 
+<section id="image">
+          <figure>
+            <img src="images/car.jfif" alt="Car" class="ui fluid image">
+            <figcaption>Car Rental</figcaption>
+          </figure>
+        </section>
+</main>
+</div>
+</body>
+</html>
