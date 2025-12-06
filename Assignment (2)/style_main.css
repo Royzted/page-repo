@@ -1,0 +1,195 @@
+@font-face {
+    font-family: 'SF Pro';
+    src: url('fonts/SF-Pro.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'SF Pro Bold';
+    src: url('fonts/SF-Pro-Bold.ttf') format('truetype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'SF Pro Expanded';
+    src: url('fonts/SF-Pro-ExpandedThin.ttf') format('truetype');
+    font-weight: 100; 
+}
+@font-face {
+  font-family: 'eurostile';
+  src: url('fonts/Eurostile.ttf') format('truetype');
+}
+/*___________________________________BODY____________________________________*/
+body {
+background-color: #000000;
+font-family: "eurostile";
+}
+/*___________________________________*BODY___________________________________*/
+
+/*___________________________________NAV____________________________________*/
+.top-bar {
+  display: flex;
+  justify-content: space-between;   
+  align-items: flex-start;       
+  padding: 16px;                
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.button {
+  display: inline-flex;          
+  align-items: center;
+  justify-content: center;
+
+ 
+  background-color: transparent;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+
+  
+  padding: clamp(8px, 1.2vw, 14px) clamp(12px, 2vw, 24px); 
+  font-family: 'SF Pro Expanded', system-ui, sans-serif;
+  font-size: clamp(22px, 3vw, 36px); 
+  text-align: center;
+
+  transition: background-color 180ms ease, transform 80ms ease, border-color 180ms ease;
+  cursor: pointer;
+
+  
+  white-space: normal;
+  word-break: break-word; 
+  max-width: 90vw;              
+  box-sizing: border-box;
+  transition: color 0.4s ease, color 0.4s ease;
+}
+
+
+.button:hover {
+  color: rgba(255, 255, 255, 0.5);
+  
+}
+
+
+.button:active {
+  transform: translateY(1px) scale(0.995);
+}
+/*___________________________________*NAV___________________________________*/
+
+/*------------------ RAINBOW HR ------------------*/
+/*used chat gpt to help me with this*/
+hr {
+    border: none;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    red, orange, yellow, green, cyan, blue, violet, red, orange, yellow, green);
+  background-size: 400% 300%;
+  animation: rainbow 6s linear infinite;
+  border-radius: 2px;
+}
+@keyframes rainbow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+/*------------------ *RAINBOW HR -----------------*/
+
+/*------------------ MAIN CONTAINER ------------------*/
+
+/*------------------ MAIN PHOTO ------------------*/
+.mainPhoto {
+    display: inline-flex;
+    align-items: center;
+    width: 40vw;              
+    max-width: 250px;          
+    height: auto;              
+    aspect-ratio: 1 / 1;      
+    object-fit: cover;    
+    border-radius: 50%;  
+}
+.mainPhoto:hover {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); 
+    transform: scale(1.05);                      
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+/*------------------ *MAIN PHOTO ------------------*/
+p {
+    color: white;
+    font-size: 36px;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+/*------------------ Sections ------------------*/
+.content-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between; 
+  align-items: flex-start;
+  padding: 20px;
+  
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+
+.content {
+  flex: 1 1 160px;    
+  min-width: 140px;   
+  max-width: 18%;     
+  background: transparent;
+  color: #ffffff;
+  font-family: 'SF Pro Expanded', system-ui, sans-serif;
+}
+
+.content summary {
+  list-style: none;
+  cursor: pointer;
+  font-size: clamp(16px, 2.2vw, 22px);
+  padding: 8px 10px;
+  margin: 0;
+  user-select: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background: rgba(255,255,255,0.04);
+  color: rgba(255,255,255,0.95);
+}
+.content summary:hover {
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background: rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.95);
+}
+
+
+@media (max-width: 900px) {
+  .content { flex: 1 1 45%; max-width: 48%; }
+}
+
+@media (max-width: 520px) {
+  .content-container { gap: 12px; padding: 12px; }
+  .content { flex: 1 1 100%; max-width: 100%; }
+  .content summary { text-align: left; }
+}
+/*------------------ *Sections ------------------*/
+
+/*------------------ Footer ------------------*/
+footer
+{
+    margin-top: 40px;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    font-size: 14px;
+    background-color: #0F0F0F;
+}
+
+
+/*------------------ *Footer ------------------*/
+
+/*------------------ VIDEO BACKGROUND ------------------*/
+
+/*------------------ *VIDEO BACKGROUND ------------------*/
