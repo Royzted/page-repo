@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">    
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" sizes="32x32" href="img/iAmCool.png">
+<title>Fomantic Page 1</title>
+
+<!-- FOMANTIC UI -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.9.2/dist/semantic.min.css">
+
+<link rel="stylesheet" href="style_main.css">
+
+<style>
+body {
+    background-color: #000;
+}
+
+
+.ui.card, .ui.cards>.card {
+    background-color: #0F0F0F !important;
+    color: white !important;
+    border: 1px solid #333 !important;
+}
+
+.ui.table {
+    background-color: #0F0F0F !important;
+    color: white !important;
+}
+
+.ui.accordion .title,
+.ui.accordion .content {
+    background-color: #111 !important;
+    color: white !important;
+}
+
+</style>
+</head>
+
+<body>
+  <header class="top-bar" >
+    <a href="about.html"     class="button" style="font-family: SF Pro Expanded;">ABOUT</a>
+    <a href="projects.html"     class="button" style="font-family: SF Pro Expanded;">PROJECTS</a>
+    <a href="contact.html"     class="button" style="font-family: SF Pro Expanded;">CONTACT</a>
+    <a href="form.html"     class="button" style="font-family: SF Pro Expanded;">FORM</a>
+    <a href="cardOverview.html"     class="button" style="font-family: SF Pro Expanded;">CARDVIEW</a>
+    </header>
+<hr>
+
+<div class="ui container" style="margin-top: 40px;">
+
+    <h1 class="ui inverted header" style="text-align:center;">Projects Overview</h1>
+    <hr>
+
+    <!-- GRID -->
+    <div class="ui three column grid">
+        <div class="column">
+            <img class="ui rounded image" src="img/cat1.jpg">
+        </div>
+
+        <div class="column">
+            <img class="ui rounded image" src="img/cat2.jpg">
+        </div>
+
+        <div class="column">
+            <img class="ui rounded image" src="img/cat3.jpg">
+        </div>
+    </div>
+
+    <br>
+
+    <!-- TABLE -->
+    <h2 class="ui inverted header">Project Table</h2>
+    <table class="ui celled table">
+      <thead>
+        <tr><th>Project</th><th>Type</th><th>Status</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Portfolio Website</td><td>Web</td><td>Completed</td></tr>
+        <tr><td>Unreal Engine Game</td><td>Game Dev</td><td>In Progress</td></tr>
+        <tr><td>Fomantic UI Expansion</td><td>Front-end</td><td>Active</td></tr>
+      </tbody>
+    </table>
+
+    <br>
+
+    <!-- NEW COMPONENT: ACCORDION -->
+    <h2 class="ui inverted header">More Info</h2>
+
+    <div class="ui inverted accordion">
+      <div class="title"><i class="dropdown icon"></i>Skills Used</div>
+      <div class="content">
+        <p>HTML, CSS, JavaScript, Unreal Engine, UI/UX.</p>
+      </div>
+    
+      <div class="title"><i class="dropdown icon"></i>Future Plans</div>
+      <div class="content">
+        <p>Improve the game, expand website, build backend.</p>
+      </div>
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.9.2/dist/semantic.min.js"></script>
+<script>
+$('.ui.accordion').accordion();
+</script>
+
+</body>
+</html>
