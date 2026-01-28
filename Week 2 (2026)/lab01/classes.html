@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Working with Classes</title>
+  <style>
+    .red {
+	  color:red;
+    }
+	  
+    .remove {
+	  color:green;
+    }
+	   
+    .blue {
+	  color:blue;
+    }
+  </style>  
+</head> 
+
+<body>
+  <h1>Working with Classes</h1>
+  <div class="add">Add a "red" class to me!</div>
+
+  <div class="remove">Remove the class, "remove" from me!</div>
+
+  <div class="contains1">Log to the console if I have a "blue" class?</div>
+
+  <div class="contains2 blue">Log to the console if I have a "blue" class?</div>
+
+  <div class="toggle">Do I have a "red" class? If yes, remove it. If no, add it. (Use toggle)</div>
+
+  <script>
+    let el1 = document.querySelector('.add');
+    el1.classList.add('red');
+
+    el1=document.querySelector('.remove')
+    el1.classList.remove('remove');
+
+    el1 = document.querySelector('.contains1');
+    console.log(el1.classList.contains('blue'));
+
+    el1 = document.querySelector('.contains2');
+    console.log(el1.classList.contains('blue'));
+
+    el1 = document.querySelector('.toggle');
+    el1.classList.toggle('red');
+  </script>
+</body>
+</html>

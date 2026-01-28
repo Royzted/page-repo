@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>querySelector</title>
+</head>
+
+<body>
+  <h1>querySelector</h1>
+
+  <ul id="weekOne">
+    <li class="fruit" id="apple1">Apple</li>
+    <li class="fruit" id="orange1">Orange</li>
+    <li class="fruit" id="banana1">Banana</li>
+    <li class="veg" id="potato1">Potato</li>
+    <li class="veg" id="carrot1">Carrot</li>
+    <li class="breads" id="slicedwhite1">Sliced White</li>
+    <li class="breads" id="slicedbrown1">Sliced Brown</li>
+  </ul>
+
+  <ul id="weekTwo">
+    <li class="fruit" id="apple2">Apple</li>
+    <li class="fruit" id="banana2">Banana</li>
+    <li class="veg" id="potato2">Potato</li>
+    <li class="veg" id="turnip2">Turnip</li>
+    <li class="breads" id="slicedwhite2">Sliced White</li>
+    <li class="breads" id="rolls2">3 Brown Rolls</li>
+  </ul>
+  
+  <script>
+
+const list1a = document.querySelector('#weekOne');
+console.log(list1a)
+
+
+const list1b = document.querySelector('ul');
+console.log(list1b)
+
+
+const app1 = list1a.querySelector('li');
+console.log(app1)
+
+
+const app2 = list1a.querySelector('.fruit');
+console.log(app2)
+
+
+const app3 = document.querySelector('#apple1');
+console.log(app3)
+
+
+const list2a = document.querySelector('#weekTwo');
+console.log(list2a)
+
+const apple1 = list2a.querySelector('li');
+console.log(apple1)
+
+
+const apple2 = list2a.querySelector('.fruit');
+console.log(apple2)
+
+
+const apple3 = list2a.querySelector('#apple2');
+console.log(apple3)
+
+
+const banana1 = list2a.querySelector('#banana2');
+console.log(banana1)
+
+
+const bread1 =list2a.querySelector('.breads');
+console.log(bread1)
+
+
+const bread2 = list2a.querySelector('#slicedwhite2');
+console.log(bread2)
+  </script>
+</body>
+</html>
