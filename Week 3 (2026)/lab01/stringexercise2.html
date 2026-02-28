@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>String Exercise 2</title>
+	<style>
+	  body {
+	     width:400px;
+		 margin:0 auto;
+	  }
+	  
+	  p {
+	     border: solid black 1px;
+		 height: 20px;
+	  }
+	</style>
+</head>
+
+<body>
+<h1>String Exercise Two</h1>
+<p id = "input"></p>
+<p id = "length"></p>
+<p id = "firstDot"></p>
+<p id = "lastDot"></p>
+<p id = "symbol"></p>
+<button>String Exercise 2</button>
+
+<script>
+
+const btn = document.querySelector('button');
+const inputP = document.getElementById('input');
+const lenP = document.getElementById('length');
+const firstDotP = document.getElementById('firstDot');
+const lastDotP = document.getElementById('lastDot');
+const symbolP = document.getElementById('symbol');
+  
+btn.addEventListener('click', (evt) => {
+	const word = prompt("Enter your email")
+	if (!word) return;
+
+	inputP.textContent = `Your email is: ${word}`;
+	lenP.textContent = `Length: ${word.length}`;
+	firstDotP.textContent = `First dot position: ${word.indexOf('.')}`;
+	lastDotP.textContent = `Last dot position: ${word.lastIndexOf('.')}`;
+	symbolP.textContent = `@ symbol position: ${word.indexOf('@')}`;
+});
+	
+</script>
+
+</body>
+</html>

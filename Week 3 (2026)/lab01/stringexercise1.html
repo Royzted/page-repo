@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>String Exercise 1</title>
+	<style>
+	  body {
+	     width:400px;
+		 margin:0 auto;
+	  }
+	  
+	  p {
+	     border: solid black 1px;
+		 height: 20px;
+	  }
+
+	</style>
+	  
+</head>
+
+
+
+<body>
+<h1>String Exercise One</h1>
+<p id = "length"></p>
+<p id = "firstChar"></p>
+<p id = "lastChar"></p>
+<button>String Exercise 1</button>
+<script>
+
+const btn = document.querySelector('button');
+const lenP = document.getElementById('length');
+const firstP = document.getElementById('firstChar');	
+const lastP = document.getElementById('lastChar');
+  
+btn.addEventListener('click', (evt) => {
+    const word = prompt("Enter your name")
+    if (!word) return;
+
+    lenP.textContent = `Length: ${word.length}`;
+    firstP.textContent = `First character: ${word[0]}`;
+    lastP.textContent = `Last character: ${word[word.length - 1]}`;
+});
+	
+</script>
+
+</body>
+</html> 
