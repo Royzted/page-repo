@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Lab 2 Array (forEach)</title>
+</head>
+
+<body>
+<h1>Array (forEach)</h1>
+<p></p>
+
+<script>
+const arr = [1,2,3,4,5,6,7,8,9,10]
+let para = document.querySelector('p')
+  
+para.insertAdjacentHTML('beforeend', `Original: ${arr}<br>`)
+para.insertAdjacentHTML('beforeend',  `<br>Loop through the numbers:<br>`)
+arr.forEach(item => para.insertAdjacentHTML('beforeend', `${item}<br>`))
+  
+let total = 0;
+arr.forEach(num => total += num)
+para.insertAdjacentHTML('beforeend', `<br>Summation of the Array: ${total}<br>`)
+
+let evenArr = [];
+
+arr.forEach(num => {
+    if (num % 2 === 0) {
+        evenArr.push(num)
+    }
+})
+
+para.insertAdjacentHTML('beforeend', `<br>Even Numbers: ${evenArr}<br>`)
+
+</script>
+</body>
+</html>

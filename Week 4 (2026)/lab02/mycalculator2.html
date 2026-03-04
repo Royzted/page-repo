@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Validate My Calculator</title>
+    <style>
+        body {
+            margin: 0 auto;
+            padding: 2em;
+        }
+
+        p {
+            border: solid black 1px;
+            height: 20px;
+            width: 300px;
+        }
+
+        div>section {
+            display: flex;
+        }
+
+        #s1 {
+            justify-content: space-between;
+        }
+
+        #s2 {
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Calculator (with valid numbers) </h1>
+    <div>
+        <section id="s1">
+            <p id="p1"></p>
+
+            <p id="p2"></p>
+
+            <p id="p3"></p>
+
+            <p id="p4"></p>
+        </section>
+
+        <section id="s2">
+            <button>Calculate</button>
+        </section>
+    </div>
+
+    <script>
+		let firstNum = 0, secondNum = 0;
+        const checkNumber = (msg) => {
+        let num;
+        let input;
+		 do{
+            input = prompt(msg);
+            if (input === null){return null;}
+            
+            input.trim();
+
+            num = Number(input);
+
+            if (isNaN(num))
+            {
+                alert(`Invalid Number`);
+            }
+         }while (isNaN(num));
+         return num;
+        }
+
+        const getNumbers = () => {
+            firstNum = checkNumber("Enter the first integer:")
+			if (firstNum === null) return false; // stop if cancelled
+            secondNum = checkNumber("Enter the second integer:")
+			if (secondNum === null) return false; // stop if cancelled
+			return true;
+        }
+		
+		const calculations = (evt) => {
+		    const gotNumbers = getNumbers();
+            if (!gotNumbers) return; // user cancelled so no output
+            let addResult = firstNum + secondNum
+            document.querySelector('#p1').innerHTML = `<b>Addition</b>:  ${firstNum} +  ${secondNum}  = ${addResult}`
+            let subResult = firstNum - secondNum
+            document.querySelector('#p2').innerHTML = `<b>Subtraction</b>:  ${firstNum} -  ${secondNum}  = ${subResult}`
+            let mulResult = firstNum * secondNum
+            document.querySelector('#p3').innerHTML = `<b>Multiplication</b>:  ${firstNum} *  ${secondNum}  = ${mulResult}`
+            let divResult = secondNum !== 0 ? (firstNum / secondNum).toFixed(5) : 'Cannot divide by zero'
+            document.querySelector('#p4').innerHTML = `<b>Division</b>:  ${firstNum} /  ${secondNum}  = ${divResult}`
+		}
+
+        const btn = document.querySelector('button')
+
+        btn.addEventListener('click', calculations)
+    </script>
+</body>
+</html>

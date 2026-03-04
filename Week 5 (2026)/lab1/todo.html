@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>To Do List</title>
+</head>
+
+<body>
+<h1>To Do List</h1>
+<p></p>
+
+<script>
+
+let todos = ["study", "exercise", "cook"];
+let para = document.querySelector('p');
+
+function printArray(step) {
+    para.insertAdjacentHTML('beforeend', `<strong>${step}</strong>: ${todos.join(", ")}<br><br>`);
+}
+printArray("Initial array");
+
+todos.push("relax", "sleep");
+printArray("After adding relax and sleep to the end");
+
+todos.unshift("wake up", "walk");
+printArray("After adding wake up and walk to the beginning");
+
+todos.pop();
+printArray("After removing the last item");
+
+todos.shift();
+printArray("After removing the first item");
+
+let indexExercise = todos.indexOf("exercise");
+if (indexExercise !== -1) {
+    todos[indexExercise] = "read";
+}
+printArray("After replacing exercise with read");
+
+let indexRead = todos.indexOf("read");
+if (indexRead !== -1) {
+    todos.splice(indexRead, 0, "meditate");
+}
+printArray("After inserting meditate");
+
+</script>
+</body>
+</html>

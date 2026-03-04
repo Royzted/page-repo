@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Math Library</title>
+	<style>
+		body {
+			width: 400px;
+			margin: 0 auto;
+		}
+
+		p {
+			border: solid black 1px;
+			height: 20px;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>The Math Library</h1>
+	<p id="num"></p>
+	<p id="area"></p>
+	<p id="circumference"></p>
+	<button>Circle Calculations</button>
+	<script>
+
+	const num = document.getElementById('num');
+	const area = document.getElementById('area');
+	const circum = document.getElementById('circumference');
+
+		const btn = document.querySelector('button');
+		
+
+		btn.addEventListener('click', (evt) => {
+const radius = prompt("Enter a radius");
+		if (!radius) return;
+
+		num.textContent = `the number you entered is ${radius}`;
+		area.textContent = `the area is ${(Math.PI * Math.pow(radius,2)).toFixed(5)}`;
+		circum.textContent = `the circumference is ${(2 * Math.PI * radius).toFixed(5)}`;
+		})
+	</script>
+</body>
+
+</html>

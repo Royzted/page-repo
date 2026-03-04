@@ -14,5 +14,7 @@ const redbtn = document.querySelector(".red");
 
 redbtn.addEventListener("click", () => {
   let username = prompt("What's your name?");
-  document.querySelector("h1").textContent = `Welcome to the App, ${username} !`;
+  document.querySelector("h1").textContent = 
+  `Welcome to the App, ${username.substring(0,1).toUpperCase()}
+  ${username.substring(1, username.length + 1).toLowerCase()} !`;
 });

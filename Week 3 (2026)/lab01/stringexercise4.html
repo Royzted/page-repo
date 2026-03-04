@@ -25,9 +25,16 @@
 
 <script>
 const btn = document.querySelector('button');
-  
+const inp = document.getElementById('input');  
+const lett = document.getElementById('letters');  
+const nums = document.getElementById('numbers');  
 btn.addEventListener('click', (evt) => {
-  
+	const course = prompt("Enter your couse id");
+	if (!course) return;
+
+	inp.textContent = `The Course you entered is: ${course}`;
+	lett.textContent = ` ${course.substring(0,2)}`;
+	nums.textContent = ` ${course.substring(2,5)}`;
 });
 </script>
 

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Template Exercise 2</title>
+  <style>
+     body {
+      display:flex;
+	  flex-direction: column;
+	  align-items: center;
+  }
+
+    .card {
+      flex: 0 0 250px;
+      margin: 10px;
+      border: 1px solid #ccc;
+      box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+      transition: 0.3s;
+    }
+
+    .card img {
+      max-width: 100%;
+      margin: 0;
+    }
+
+    .card .text {
+      padding: 0 20px 10px;
+    }
+
+    .card p:nth-of-type(1) {
+      padding-bottom: 1em;
+
+    }
+
+    .card p:nth-of-type(2) {
+      border-top: solid lightgray 1px;
+      padding-top: 1em;
+      color: gray;
+    }
+
+    .card:hover {
+      transform: scale(1.1);
+    }
+
+    table {
+      width: 100%;
+
+    }
+
+    td:nth-of-type(1) {
+      padding-right: 2em;
+    }
+
+    #outer {
+      display: flex;
+      flex-direction: column;
+      gap: .5em;
+    }
+
+    .inner {
+      display: flex;
+      gap: 1em;
+      justify-content: space-between;
+    }
+
+    .inner span {
+      flex: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>For Sale</h1>
+  <p id="output"></p>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"></script>
+  <script id="exercise-2" type="text/x-handlebars-template">
+  <div class="card">
+   <img src ="{{image}}">
+    <div class="text">
+     <h2>{{make}} {{model}}</h2>
+	   <p>{{detail}}</p>
+    
+	   <div id="outer">
+      <div class = "inner">
+        <span><i class="fa fa-calendar">{{year}}</i></span>
+        <span><i class="fa fa-paint-brush">{{colour}}</i> </span>
+      </div>
+      <div class="inner">
+        <span><i class="fa fa-tachometer">{{kms}}</i> </span>
+        <span><i class="fa fa-car">{{style}}</i> </span>
+      </div>
+     </div>
+	   <p><i class="fa fa-eur">{{price}}</i> </p>
+    </div>
+  </div>
+  </script>
+  
+  <script>
+
+    const car = {
+      'make': 'Audi',
+      'model': 'Q3',
+      'detail': 'Se 35TDI 150HP ST + Comfort Pack',
+      'colour': 'Orange',
+      'image': 'images/car.jpg',
+      'kms': '35,630',
+      'year': 2023,
+      'price': '48,500',
+      'style': 'Hatchback'
+    }
+  
+    let template = Handlebars.compile(document.querySelector('#exercise-2').innerHTML);
+
+    let output = template(car);
+
+    document.querySelector('#output').innerHTML = output;
+  </script>
+</body>
+
+</html>

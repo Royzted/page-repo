@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Array Methods</title>
+</head>
+<body>
+<h1>Array Methods</h1>
+
+<p id="list1"></p>
+<p id="list2"></p>
+<p id="list3"></p>
+<p id="list4"></p>
+
+<script>
+
+const numbers = [12, 5, 8, 130, 44, 2, 19];
+
+document.querySelector('#list1').textContent = `Array elements: ${numbers.join(", ")}`;
+
+const filtered = numbers.filter(num => num > 10);
+
+document.querySelector('#list2').textContent = `Filtered (greater than 10): ${filtered.join(", ")}`;
+
+
+const mapped = numbers.map(num => num * 2);
+
+document.querySelector('#list3').textContent = `Mapped (doubled numbers): ${mapped.join(", ")}`;
+
+numbers.sort((a, b) => a - b);
+
+document.querySelector('#list4').textContent = `Sorted (ascending): ${numbers.join(", ")}`;
+
+</script>
+
+</body>
+</html>

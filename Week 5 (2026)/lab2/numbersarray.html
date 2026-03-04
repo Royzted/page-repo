@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Lab 2 Array (Looping through an array)</title>
+</head>
+
+<body>
+<h1>Array (Looping through an array)</h1>
+<p></p>
+<script>
+
+const numbers = [1, 12, 4, 18, 9, 7, 11, 3, 50, 5, 6]
+let para = document.querySelector('p');
+
+para.insertAdjacentHTML('beforeend', `<b>${numbers}</b><br>`);
+para.insertAdjacentHTML('beforeend', `<br><b>Loop through the numbers.</b><br>`)
+
+for (const num1 of numbers) {
+  para.insertAdjacentHTML('beforeend', `${num1}<br>`)
+}
+
+para.insertAdjacentHTML('beforeend', `<br><b>Numbers greater than 5:</b><br>`)
+
+for (const num of numbers) {
+  if (num > 5) {
+    para.insertAdjacentHTML('beforeend', `${num}<br>`)
+  }
+}
+
+</script>
+</body>
+</html>

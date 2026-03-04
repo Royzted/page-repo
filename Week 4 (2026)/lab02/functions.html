@@ -1,0 +1,64 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+  <meta charset="utf-8">
+  <title>Functions</title>
+ </head>
+ <body>
+ <script>
+/*const divideBy2 = num => num/2;
+const area = (num1, num2) => num1 * num2;
+
+  console.log(`12 divided by 2 is ${divideBy2(12)}`);
+  console.log(`8 divided by 2 is ${divideBy2(8)}`);
+
+  console.log(`Area of 100 by 150 is ${area(100, 150)}`); 
+
+  const testPrime = (n) =>
+{
+   if (n===1)
+   {
+    return false;
+   }
+   else if(n === 2)
+   {
+    return true;
+   } else
+    {
+    for(let x = 2; x < n; x++)
+    {
+      if(n % x === 0)
+      {
+        return false;
+      }
+    }
+    return true;  
+    }
+}
+
+
+
+let num = parseInt(prompt("Enter a number between 1 and 20 to check if it is Prime", ""));
+if (isNaN(num) || num < 1 || num > 20) {
+      console.log("Error - cannot proceed");
+}
+else {   
+   testPrime(num) ? console.log(`${num} is Prime`) : console.log(`${num} is not Prime`);
+}*/
+
+const verifyAge = (name,num) => 
+{
+
+    if (num >= 18)
+    {
+        return (`${name} is Adult`);
+    }else 
+    {
+        return(`${name} is Minor`);
+    }
+}
+console.log (verifyAge("Kiril", 18));
+console.log (verifyAge("Misha", 17));
+ </script>
+ </body>
+ </html>
