@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="utf-8">
+ <title>Array of Objects</title>
+ <style>
+ 
+ table {
+   width: 30%;
+   border-collapse: collapse;
+ }
+ 
+ table, th, td {
+   border: solid black 1px;
+ }
+ 
+ td {
+    text-align: center;
+ }
+ </style>
+</head>
+<body>
+<h1>Product</h1>
+<table></table>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"></script>
+
+<script id="original" type="text/x-handlebars-template">
+<tr><th>Name</th><th>Category</th><th>Price</th><th>Rating</th><th>In Stock</th></tr>
+{{#each this}}
+  <tr><td>{{name}}</td><td>{{upper category}}</td><td>{{price}}</td><td>{{rating}}</td><td>{{testStock inStock}}</td></tr>
+{{/each}}
+</script>
+
+<script>
+
+const products = [
+  { id: 1, name: "Smartphone", category: "Electronics", price: 800, rating: 4.7, inStock: true },
+  { id: 2, name: "Headphones", category: "Electronics", price: 200, rating: 4.2, inStock: true },
+  { id: 3, name: "Coffee Maker", category: "Home Appliances", price: 150, rating: 3.8, inStock: false },
+  { id: 4, name: "Laptop", category: "Electronics", price: 1400, rating: 4.5, inStock: true },
+  { id: 5, name: "Desk Lamp", category: "Furniture", price: 50, rating: 3.5, inStock: true },
+  { id: 6, name: "Blender", category: "Home Appliances", price: 100, rating: 4.0, inStock: true },
+  { id: 7, name: "Office Chair", category: "Furniture", price: 300, rating: 4.3, inStock: false },
+  { id: 8, name: "Tablet", category: "Electronics", price: 600, rating: 4.4, inStock: true },
+  { id: 9, name: "Microwave", category: "Home Appliances", price: 250, rating: 4.1, inStock: true },
+  { id: 10, name: "Monitor", category: "Electronics", price: 400, rating: 4.6, inStock: true },
+  { id: 11, name: "Bookshelf", category: "Furniture", price: 200, rating: 3.9, inStock: true },
+  { id: 12, name: "Air Fryer", category: "Home Appliances", price: 220, rating: 4.8, inStock: true },
+  { id: 13, name: "Gaming Console", category: "Electronics", price: 500, rating: 4.9, inStock: false },
+  { id: 14, name: "Standing Desk", category: "Furniture", price: 650, rating: 4.4, inStock: true },
+  { id: 15, name: "Refrigerator", category: "Home Appliances", price: 1400, rating: 4.3, inStock: false }
+];
+
+Handlebars.registerHelper('testStock', inStock =>
+inStock ? "Yes" : "No"
+)
+
+Handlebars.registerHelper('upper', category =>
+category.toUpperCase()
+)     
+
+
+
+const renderTemplate = (templateSelector, data, targetSelector) => {
+  const templateSource = document.querySelector(templateSelector).innerHTML;
+  const template = Handlebars.compile(templateSource);
+  const output = template(data);
+  const target = document.querySelector(targetSelector);
+  return target.innerHTML = output;
+}
+
+renderTemplate('#original', products, 'table');
+
+</script>
+</body>
+</html>
