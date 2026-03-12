@@ -35,13 +35,8 @@
 </script>
 
 <script id="sort1" type="text/x-handlebars-template">
-  {{#if this}}
-  <table>
-<tr><th>Name</th><th>Category</th><th>Price</th><th>Rating</th><th>In Stock</th></tr>
-{{#each this}}
-  <tr><td>{{name}}</td><td>{{upper category}}</td><td>{{price}}</td><td>{{rating}}</td><td>{{testStock inStock}}</td></tr>
-{{/each}}
-</table>
+{{#if this}}
+<h2>Total Value: {{value}}</h2>
 {{/if}}
 </script>
 
@@ -86,11 +81,19 @@ const renderTemplate = (templateSelector, data, targetSelector) => {
 
 renderTemplate('#original', products, 'table');
 
-let total = 0;
-for (let i = 0; i < products.length; i++) {
-  total += products[i].price;
-}
-renderTemplate('#sort1');
+
+const inStockP = products.filter(products => products.inStock);
+
+
+const sum = (total, product) => total + product.price;
+
+const Fullvalue = inStockP.reduce(sum, 0);
+
+
+const FormatValue = Fullvalue.toLocaleString("en-IE", { style: "currency", currency: "EUR" })
+
+document.querySelector('div').innerHTML = `Total Value is: ${FormatValue}`;
+
 </script>
 </body>
 </html>
