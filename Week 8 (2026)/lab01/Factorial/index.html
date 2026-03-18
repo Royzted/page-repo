@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Factorial</title>
+
+  <head>
+    <style>
+      .container {
+        width: 50%;
+        margin: 1em auto;
+      }
+
+      .form-row {
+        display: flex;
+      }
+
+      label {
+        flex: 0 1 20%;
+        font-weight: bold;
+      }
+
+      form input {
+        flex: 1;
+        padding: .5em;
+        margin-bottom: 1em;
+      }
+
+      form button {
+        padding: 1em;
+        background: green;
+        color: white;
+        border: 0;
+        border-radius: 5%;
+      }
+    </style>
+
+  </head>
+
+<body>
+  <div class="container">
+    <h1>Factorial</h1>
+    <form>
+      <div class="form-row">
+        <label for="num">Number</label>
+        <input type="text" id="num" name="num" autofocus required pattern="\d{1,2}" title="Numeric positive data only">
+      </div>
+      <div class="form-row">
+        <label for="factorial">Factorial</label>
+        <input type="text" id="factorial" name="factorial" disabled>
+      </div>
+      <button type="submit">Calculate Factorial</button>
+    </form>
+  </div>
+  <script src="js/calculate.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Array of Objects</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<div id  = "container">
+  <h1>My Friends</h1>
+  <form>
+  <div class = "form-row">
+   <label for = "name">Filter by City</label>
+   <input type = "text" name = "city" id = "city" autofocus required>
+   </div>
+   <button type = "submit">Search</button>
+  </form>
+  <div id="cards"></div>
+</div>
+<script id="search" type="text/x-handlebars-template">
+
+      <div class="ui centered link cards">
+        {{#each this}}
+          <div class="card">
+            <img src="{{image}}" alt="{{name}}" />
+            <div class="text">
+              <h3>{{fullname}}</h3>
+              <p>
+                <i>{{name}}</i>
+                is a
+                <b>{{job}}</b>
+                in
+                {{city}}
+                and joined in
+                {{joined}}
+              </p>
+              <p><i class="fa fa-user"></i> {{mates}} Friends</p>
+            </div>
+          </div>
+        {{/each}}
+      </div>
+      
+    </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"></script>
+
+  <script>
+
+    const friends = [
+        {
+          name: "Stevie",
+          fullname: "Stevie Feliciano",
+          image: "images/stevie.jpg",
+          joined: 2016,
+          job: "Web Developer",
+          city: "Boston",
+          mates: 35,
+        },
+        {
+          name: "Helen",
+          fullname: "Helen Hess",
+          image: "images/helen.jpg",
+          joined: 2013,
+          job: "Art Director",
+          city: "New York",
+          mates: 22,
+        },
+        {
+          name: "Elliot",
+          fullname: "Elliot Fu",
+          image: "images/elliot.jpg",
+          joined: 2015,
+          job: "Research Assistant",
+          city: "New York",
+          mates: 26,
+        },
+        {
+          name: "Christian",
+          fullname: "Christian Monroe",
+          image: "images/christian.jpg",
+          joined: 2016,
+          job: "Musician",
+          city: "Boston",
+          mates: 23,
+        },
+        {
+          name: "Matt",
+          fullname: "Matt Smith",
+          image: "images/matt.jpg",
+          joined: 2015,
+          job: "Teacher",
+          city: "New York",
+          mates: 28,
+        },
+        {
+          name: "Jenny",
+          fullname: "Jenny Howe",
+          image: "images/jenny.jpg",
+          joined: 2014,
+          job: "UX Designer",
+          city: "Manhatten",
+          mates: 30,
+        },
+		{
+          name: "Daniel",
+          fullname: "Daniel James",
+          image: "images/daniel.jpg",
+          joined: 2014,
+          job: "Web Developer",
+          city: "New Jersey",
+          mates: 35,
+        },
+		{
+          name: "Joe",
+          fullname: "Joe Smyth",
+          image: "images/joe.jpg",
+          joined: 2012,
+          job: "Teacher",
+          city: "Manhatten",
+          mates: 23,
+        }
+      ];
+	  
+	const renderTemplate = (data, targetSelector) => {
+      const output = template(data);
+      const target = document.querySelector(targetSelector);
+      return target.innerHTML = output;
+	}
+	  
+    let template = Handlebars.compile(
+        document.querySelector("#search").innerHTML,
+    );
+	renderTemplate(friends, '#cards');
+	
+    const form = document.querySelector('form');// form
+	const textInput = form.elements.city;// text box (city)
+
+  form.addEventListener("submit" , (e) =>{
+    e.preventDefault();
+
+    let input = form.elements.city.value;
+
+    let filtered = friends.filter (friend =>  friend.city.toLowerCase().trim() === input.toLowerCase().trim());
+    
+    renderTemplate(filtered, '#cards');
+  });
+	
+  </script>
+</body>
+
+</html>
