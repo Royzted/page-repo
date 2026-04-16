@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Gallery</title>
+
+  <style>
+    body {
+      background-color: white;
+    }
+
+    #container {
+      width: 80%;
+      margin: 1em auto;
+      border: solid green;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      text-align: center;
+    }
+
+    #inner {
+      display: flex;
+    }
+
+    #gallery {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      padding: 1em;
+      flex-wrap: wrap;
+      gap: 2em;
+    }
+
+    /* container */
+    .img-wrap {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    /* images */
+    .img-wrap img {
+      display: block;
+      width: 100%;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+
+    /* BW image on top */
+    .bw {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+    }
+
+    /* Hover effect */
+    .img-wrap:hover .bw {
+      opacity: 1;
+      transform: scale(.95);
+    }
+
+    #display {
+      flex: 1;
+      margin: 2em 5em;
+      transition: opacity ease 5s;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <header>
+      <h1>Art</h1>
+    </header>
+    <div id="inner">
+      <section id="gallery">
+        <div class="img-wrap">
+          <a href="images/photo1.jpg">
+            <img alt="Photo 1" src="images/thumbnails/photo1.jpg" class="color">
+            <img alt="Photo 1" src="images/bw/photo1.jpg" class="bw">
+          </a>
+        </div>
+        <div class="img-wrap">
+          <a href="images/photo2.jpg">
+            <img alt="Photo 2" src="images/thumbnails/photo2.jpg" class="color">
+            <img alt="Photo 2" src="images/bw/photo2.jpg" class="bw">
+          </a>
+        </div>
+        <div class="img-wrap">
+          <a href="images/photo3.jpg">
+            <img alt="Photo 3" src="images/thumbnails/photo3.jpg" class="color">
+            <img alt="Photo 3" src="images/bw/photo3.jpg" class="bw">
+          </a>
+        </div>
+        <div class="img-wrap">
+          <a href="images/photo4.jpg">
+            <img alt="Photo 4" src="images/thumbnails/photo4.jpg" class="color">
+            <img alt="Photo 4" src="images/bw/photo4.jpg" class="bw">
+          </a>
+        </div>
+        <div class="img-wrap">
+          <a href="images/photo5.jpg">
+            <img alt="Photo 5" src="images/thumbnails/photo5.jpg" class="color">
+            <img alt="Photo 5" src="images/bw/photo5.jpg" class="bw">
+          </a>
+        </div>
+        <div class="img-wrap">
+          <a href="images/photo6.jpg">
+            <img alt="Photo 6" src="images/thumbnails/photo6.jpg" class="color">
+            <img alt="Photo 6" src="images/bw/photo6.jpg" class="bw">
+          </a>
+        </div>
+      </section>
+
+      <img src="images/photo1.jpg" alt="image" id="display">
+    </div>
+  </div>
+
+</body>
+
+<script>
+
+  let gallery = document.querySelector('#gallery');
+  let source = document.querySelector('#display');
+
+  gallery.addEventListener('click', (evt) => {
+    const img = evt.target.closest('img');
+    if (!img) return;
+
+    evt.preventDefault();
+
+    const link = img.closest('a');
+    if (!link) return;
+
+    source.style.opacity = 0;
+
+    setTimeout(() => {
+      source.src = link.href;
+      source.style.opacity = 1;
+    }, 500);
+  });
+
+
+</script>
+
+
+</html>

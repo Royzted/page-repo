@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Slideshow</title>
+
+  <style>
+    body {
+      background-color: white;
+    }
+
+    #container {
+      margin: 1em auto;
+      padding: 1em;
+      width: 80%;
+      border: solid green;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      text-align: center;
+    }
+
+    .carousel {
+      position: relative;
+      overflow: hidden;
+      width: calc(2 * 400px + 1 * 30px);
+      margin: auto;
+      padding: 1em 0;
+    }
+
+    .slides {
+      display: flex;
+      gap: 30px;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slides img {
+      flex: 0 0 400px;
+      height: 400px;
+    }
+
+    button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.9);
+      color: black;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: rgba(255, 255, 255, 0.5);
+    }
+
+
+    .prev {
+      left: 10px;
+    }
+
+    .next {
+      right: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <header>
+      <h1>Art</h1>
+    </header>
+
+    <div class="carousel">
+      <div class="slides">
+        <img src="images/photo1.jpg">
+        <img src="images/photo2.jpg">
+        <img src="images/photo3.jpg">
+        <img src="images/photo4.jpg">
+        <img src="images/photo5.jpg">
+        <img src="images/photo6.jpg">
+      </div>
+
+      <button class="prev">‹</button>
+      <button class="next">›</button>
+    </div>
+  </div>
+
+</body>
+
+<script>
+  const prev = document.querySelector('.prev');
+  const next = document.querySelector('.next');
+  const slides = document.querySelector(".slides");
+  const images = document.querySelectorAll(".slides img");
+
+  let index = 0;
+  const total = images.length;
+  const visibleCount = 2;
+
+  const updateSlide = () => {
+    const imageWidth = images[0].clientWidth;
+    const gap = parseInt(getComputedStyle(slides).gap) || 0;
+
+    const moveAmount = index * (imageWidth + gap);
+    slides.style.transform = `translateX(-${moveAmount}px)`;
+  };
+
+  next.addEventListener('click', () => {
+    index < total - visibleCount ? index += visibleCount : index = 0;
+    updateSlide();
+  });
+
+  prev.addEventListener('click', () => {
+    index > 0 ? index -= visibleCount : index = total - visibleCount;
+    updateSlide();
+  });
+
+</script>
+
+
+</html>

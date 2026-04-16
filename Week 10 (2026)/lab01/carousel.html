@@ -1,0 +1,118 @@
+<html>
+
+<head>
+    <title>Image Carousel</title>
+    <style>
+        body {
+            background-color: white;
+        }
+
+        #container {
+            margin: 1em auto;
+            padding: 1em;
+            width: 80%;
+            border: solid green;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            text-align: center;
+        }
+
+        .carousel {
+            position: relative;
+            width: 80%;
+            max-width: 600px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .img-wrap {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .img-wrap img {
+            width: 100%;
+            height: auto;
+            flex-shrink: 0;
+        }
+
+        button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        button:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <h1>Art</h1>
+        </header>
+        <div class="carousel">
+            <div class="img-wrap">
+                <img src="images/photo1.jpg">
+                <img src="images/photo2.jpg">
+                <img src="images/photo3.jpg">
+                <img src="images/photo4.jpg">
+                <img src="images/photo5.jpg">
+                <img src="images/photo6.jpg">
+            </div>
+            <button class="prev">‹</button>
+            <button class="next">›</button>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    const prev = document.querySelector('.prev');
+    const next = document.querySelector('.next');
+    const wrap = document.querySelector('.img-wrap');
+    const imgs = document.querySelectorAll('.img-wrap img');
+
+    let idx = 0;
+
+    const showImg = () => {
+        if (idx >= imgs.length) idx = 0;
+        if (idx < 0) idx = imgs.length - 1;
+        wrap.style.transform = `translateX(-${idx * 100}%)`;
+    }
+
+    next.addEventListener('click', () => {
+        idx++;
+        showImg();
+    });
+
+    prev.addEventListener('click', () => {
+        idx--;
+        showImg();
+    });
+</script>
+
+
+</html>

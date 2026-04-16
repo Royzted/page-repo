@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Gallery</title>
+
+  <style>
+    body {
+      background-color: white;
+    }
+
+    #container {
+      width: 80%;
+      margin: 1em auto;
+      border: solid green;
+    }
+
+    header {
+      text-align: center;
+    }
+
+    #gallery {
+      display: flex;
+      justify-content: space-evenly;
+      padding: 1em 0;
+      flex-wrap: wrap;
+    }
+
+
+    .img-wrap {
+      position: relative;
+      display: inline-block;
+      overflow: hidden;
+    }
+
+    /* Both images */
+    .img-wrap img {
+      display: block;
+      width: 100%;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+
+    /* BW image sits on top */
+    .img-wrap .bw {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+    }
+
+    /* Hover effect */
+    .img-wrap:hover .bw {
+      opacity: 1;
+      transform: scale(.95);
+    }
+
+    /* caption */
+    .caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 15px;
+      color: white;
+      background: rgba(0, 0, 0, 0.5);
+      transform: translateY(100%);
+      transition: transform 0.4s ease;
+    }
+
+    .img-wrap:hover .caption {
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <header>
+      <h1>Art</h1>
+    </header>
+
+    <section id="gallery">
+      <div class="img-wrap">
+        <a href="images/photo1.jpg">
+          <img alt="Photo 1" src="images/thumbnails/photo1.jpg" class="color">
+          <img alt="Photo 1" src="images/bw/photo1.jpg" class="bw">
+          <div class="caption">Photo 1</div>
+        </a>
+      </div>
+      <div class="img-wrap">
+        <a href="images/photo2.jpg">
+          <img alt="Photo 2" src="images/thumbnails/photo2.jpg" class="color">
+          <img alt="Photo 2" src="images/bw/photo2.jpg" class="bw">
+          <div class="caption">Photo 2</div>
+        </a>
+      </div>
+      <div class="img-wrap">
+        <a href="images/photo3.jpg">
+          <img alt="Photo 3" src="images/thumbnails/photo3.jpg" class="color">
+          <img alt="Photo 3" src="images/bw/photo3.jpg" class="bw">
+          <div class="caption">Photo 3</div>
+        </a>
+      </div>
+      <div class="img-wrap">
+        <a href="images/photo4.jpg">
+          <img alt="Photo 4" src="images/thumbnails/photo4.jpg" class="color">
+          <img alt="Photo 4" src="images/bw/photo4.jpg" class="bw">
+          <div class="caption">Photo 4</div>
+        </a>
+      </div>
+      <div class="img-wrap">
+        <a href="images/photo5.jpg">
+          <img alt="Photo 5" src="images/thumbnails/photo5.jpg" class="color">
+          <img alt="Photo 5" src="images/bw/photo5.jpg" class="bw">
+          <div class="caption">Photo 5</div>
+        </a>
+      </div>
+      <div class="img-wrap">
+        <a href="images/photo6.jpg">
+          <img alt="Photo 6" src="images/thumbnails/photo6.jpg" class="color">
+          <img alt="Photo 6" src="images/bw/photo6.jpg" class="bw">
+          <div class="caption">Photo 6</div>
+        </a>
+      </div>
+    </section>
+
+
+  </div>
+
+</body>
+
+</html>

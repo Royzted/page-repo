@@ -1,0 +1,73 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+
+    <style>
+        body {
+            background-color: white;
+        }
+
+        #container {
+            width: 80%;
+            margin: 1em auto;
+            border: solid green;
+        }
+
+        header {
+            text-align: center;
+        }
+
+        #gallery {
+            display: flex;
+            justify-content: space-evenly;
+            padding: 1em;
+            flex-wrap: wrap;
+        }
+
+        #gallery img {
+            transition: opacity .8s ease, transform .8s ease;
+            opacity: 0.5;
+        }
+
+        #gallery img:hover {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <h1>Art</h1>
+        </header>
+
+        <section id="gallery">
+            <a href="images/photo1.jpg">
+                <img alt="Photo 1" src="images/thumbnails/photo1.jpg" />
+            </a>
+            <a href="images/photo2.jpg">
+                <img alt="Photo 2" src="images/thumbnails/photo2.jpg" />
+            </a>
+            <a href="images/photo3.jpg">
+                <img alt="Photo 3" src="images/thumbnails/photo3.jpg" />
+            </a>
+            <a href="images/photo4.jpg">
+                <img alt="Photo 4" src="images/thumbnails/photo4.jpg" />
+            </a>
+            <a href="images/photo5.jpg">
+                <img alt="Photo 5" src="images/thumbnails/photo5.jpg" />
+            </a>
+            <a href="images/photo6.jpg">
+                <img alt="Photo 6" src="images/thumbnails/photo6.jpg" />
+            </a>
+        </section>
+
+    </div>
+
+</body>
+
+</html>
