@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GameVault – About</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body data-page="about">
+
+  <!-- ============================================================
+       NAVIGATION
+       ============================================================ -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <i class="fas fa-gamepad"></i> GameVault
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="data.html">Collection</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       PAGE HEADER
+       ============================================================ -->
+  <div class="page-header">
+    <div class="container">
+      <h1><i class="fas fa-info-circle"></i> About GameVault</h1>
+      <p>Learn about the project, the dataset, and the developer</p>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       ABOUT SECTION
+       Interactivity 1 – profile card 3-D flip on hover
+       (setupProfileHover in script.js)
+       ============================================================ -->
+  <section class="about-section">
+    <div class="container">
+      <div class="about-grid">
+
+        <!-- Text info -->
+        <div class="about-text">
+          <h2><i class="fas fa-book-open"></i> About the Project</h2>
+          <p>
+            GameVault is a JavaScript-powered video game catalogue built for a
+            Web Development assignment. It demonstrates dynamic DOM manipulation,
+            Handlebars templating, localStorage persistence, and integration of
+            the Swiper.js carousel plugin.
+          </p>
+          <p>
+            The site is structured across three pages:
+            a <strong>Welcome</strong> page with interactive animations,
+            a <strong>Collection</strong> page for full CRUD data management,
+            and this <strong>About</strong> page with comments and expandable FAQs.
+          </p>
+          <p>
+            All data persists in the browser via <code>localStorage</code>, so
+            your collection and comments survive page refreshes.
+          </p>
+          <div class="about-tags">
+            <span class="tag">JavaScript ES6+</span>
+            <span class="tag">Handlebars.js</span>
+            <span class="tag">Swiper.js</span>
+            <span class="tag">localStorage</span>
+            <span class="tag">Flexbox</span>
+            <span class="tag">CSS Animations</span>
+          </div>
+        </div>
+
+        <!-- Profile card – flip on hover (Interaction 1) -->
+        <div class="profile-card-wrapper">
+          <div class="profile-card" id="profileCard">
+
+            <!-- Front face -->
+            <div class="card-front">
+              <div class="profile-avatar">K</div>
+              <h3>Kiril Kononenko</h3>
+              <p>Frontend Developer</p>
+              <p>Web Development Student</p>
+              <span class="profile-hint">&#9654; Hover to flip</span>
+            </div>
+
+            <!-- Back face -->
+            <div class="card-back">
+              <h3>Skills &amp; Tools</h3>
+              <p>
+                HTML &bull; CSS &bull; JavaScript<br>
+                Handlebars &bull; Swiper.js<br>
+                Git &bull; GitHub Pages
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       DATASET INFO
+       ============================================================ -->
+  <section class="dataset-section">
+    <div class="container">
+      <div class="dataset-card">
+        <h2><i class="fas fa-table"></i> About the Dataset</h2>
+        <p>
+          The dataset is a curated collection of highly acclaimed video games.
+          Each entry contains <strong>seven properties</strong> covering both
+          textual and numeric data, making it suitable for searching, filtering,
+          sorting, and statistical calculations such as average rating.
+        </p>
+        <p style="margin-top: 12px; color: var(--text-secondary);">
+          The collection ships with <strong>7 default games</strong> and grows
+          dynamically as users add new entries via the form on the Collection page.
+        </p>
+
+        <div class="dataset-props">
+          <div class="prop-item">
+            <i class="fas fa-hashtag"></i>
+            <div><strong>id</strong><br><small style="color:var(--text-secondary)">Unique number</small></div>
+          </div>
+          <div class="prop-item">
+            <i class="fas fa-heading"></i>
+            <div><strong>title</strong><br><small style="color:var(--text-secondary)">Text</small></div>
+          </div>
+          <div class="prop-item">
+            <i class="fas fa-tag"></i>
+            <div><strong>genre</strong><br><small style="color:var(--text-secondary)">Text</small></div>
+          </div>
+          <div class="prop-item">
+            <i class="fas fa-code"></i>
+            <div><strong>developer</strong><br><small style="color:var(--text-secondary)">Text</small></div>
+          </div>
+          <div class="prop-item">
+            <i class="fas fa-calendar-alt"></i>
+            <div><strong>year</strong><br><small style="color:var(--text-secondary)">Number</small></div>
+          </div>
+          <div class="prop-item">
+            <i class="fas fa-star"></i>
+            <div><strong>rating</strong><br><small style="color:var(--text-secondary)">Number (0–10)</small></div>
+          </div>
+          <div class="prop-item">
+            <i class="fas fa-desktop"></i>
+            <div><strong>platform</strong><br><small style="color:var(--text-secondary)">Text</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FAQ ACCORDION (Interactivity 2 – expandable sections)
+       Click handler is wired by setupFaqAccordion() in script.js
+       ============================================================ -->
+  <section class="faq-section">
+    <div class="container">
+      <h2><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <div class="faq-question">
+            How is the data stored?
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            All game data and comments are saved in the browser's
+            <strong>localStorage</strong>. This means your data persists across
+            page refreshes and browser restarts — but it is device-specific and
+            not shared between browsers.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            How does the search work?
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            The search box on the Collection page filters the games array in
+            real time as you type. It matches your query against the
+            <strong>title</strong>, <strong>genre</strong>, and
+            <strong>developer</strong> fields (case-insensitive).
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            How does sorting work?
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            Choose a field (Title, Year, Rating, or Genre) from the dropdown,
+            then click the <strong>A→Z</strong> button for ascending order or
+            the <strong>Z→A</strong> button for descending. The grid re-renders
+            instantly using JavaScript's built-in <code>Array.sort()</code>.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            Which third-party plugin is used?
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <strong>Swiper.js</strong> (v11) powers the featured games carousel
+            on the Home page. It is loaded via CDN and initialised with
+            <code>new Swiper(…)</code> inside <code>initFeaturedSwiper()</code>
+            in <code>script.js</code>. Features used: autoplay, pagination
+            bullets, prev/next navigation, and responsive breakpoints.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            How are game cards rendered?
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            Cards on the Collection page and comments on this page are both
+            rendered using <strong>Handlebars.js</strong>. The templates are
+            embedded in the HTML as
+            <code>&lt;script type="text/x-handlebars-template"&gt;</code> tags.
+            <code>Handlebars.compile()</code> converts them into a function that
+            accepts the data array and returns HTML.
+          </div>
+        </div>
+
+      </div><!-- /.faq-list -->
+    </div>
+  </section>
+
+  <!-- ============================================================
+       COMMENTS SECTION
+       Form submissions handled by setupCommentForm() in script.js.
+       Comments rendered by renderComments() using Handlebars.
+       Stored in localStorage as an array of objects.
+       ============================================================ -->
+  <section class="comments-section">
+    <div class="container">
+      <h2><i class="fas fa-comments"></i> Leave a Comment</h2>
+
+      <!-- Comment submission form -->
+      <div class="comment-form-card">
+        <h3><i class="fas fa-pen"></i> Share your thoughts</h3>
+        <form id="commentForm">
+
+          <div class="comment-form-group">
+            <label for="commentName">Your Name *</label>
+            <input
+              type="text"
+              id="commentName"
+              required
+              placeholder="e.g. Alex Smith"
+              maxlength="60"
+            >
+          </div>
+
+          <div class="comment-form-group">
+            <label for="commentMessage">Message *</label>
+            <textarea
+              id="commentMessage"
+              required
+              rows="4"
+              placeholder="What do you think about the project or the collection?"
+              maxlength="500"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">
+            <i class="fas fa-paper-plane"></i> Post Comment
+          </button>
+
+        </form>
+      </div>
+
+      <!-- Comments rendered here by Handlebars -->
+      <div id="commentsContainer" class="comments-list">
+        <!-- Injected by renderComments() in script.js -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       HANDLEBARS TEMPLATE – Comments
+       Each comment object has: name, message, date, initial
+       ============================================================ -->
+  <script id="comment-template" type="text/x-handlebars-template">
+    {{#each this}}
+    <div class="comment-card">
+      <div class="comment-header">
+        <div class="comment-avatar">{{initial}}</div>
+        <div>
+          <div class="comment-name">{{name}}</div>
+          <div class="comment-date">{{date}}</div>
+        </div>
+      </div>
+      <p class="comment-message">{{message}}</p>
+    </div>
+    {{/each}}
+  </script>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 GameVault &mdash; Built for Web Development Assignment</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
