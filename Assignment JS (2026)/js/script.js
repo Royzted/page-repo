@@ -3,15 +3,15 @@
    All JavaScript for the three-page website.
 
    Rules followed:
-     ✔ No var  → only let / const
-     ✔ No prompt → form elements only
-     ✔ No console.log → DOM output / Handlebars expressions
-     ✔ Loops: forEach / for...of
-     ✔ DOM: querySelector / addEventListener
-     ✔ Functions: regular function declarations + arrow functions
-     ✔ Handlebars for all data output
-     ✔ localStorage for persistence
-     ✔ Swiper.js plugin (home page)
+     No var   only let / const
+     No prompt  form elements only
+     No console.log  DOM output / Handlebars expressions
+     Loops: forEach / for...of
+     DOM: querySelector / addEventListener
+     Functions: regular function declarations + arrow functions
+     Handlebars for all data output
+     localStorage for persistence
+     Swiper.js plugin (home page)
    ============================================================ */
 
 
